@@ -1,22 +1,27 @@
+import React from "react";
+// import ReactDOM from "react-dom/client";
 import {
-  BrowserRouter as Router,
-  Route
+  BrowserRouter,
+  Routes, 
+  Route 
 } from "react-router-dom";
 
-import './App.css';
+import './App.css'
 import Header from './components/Header'
+import ListItem from "./components/ListItem";
 import NotesListPage from './pages/NotesListPage'
-import NotePage from './pages/NotePage'
+// import NotePage from './pages/NotePage'
 
 function App() {
   return (
-    // <Router>
-      <div className="App">
-        <Header />
-        {/* <Route path='/' exact component={NotesListPage} />
-        <Route path='/note' exact component={NotePage} /> */}
-      </div>
-    // </Router>
+      <BrowserRouter>
+        <Routes>
+            {/* <div className="App"> */}
+              {/* <Header /> */}
+              <Route  path="/notes" element={<NotesListPage />} />
+            {/* </div> */}
+        </Routes>
+      </BrowserRouter>
   );
 }
 
